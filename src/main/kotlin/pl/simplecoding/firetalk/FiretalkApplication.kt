@@ -10,6 +10,7 @@ import org.springframework.boot.runApplication
 
 @SpringBootApplication
 class FiretalkApplication
+
 fun main(args: Array<String>) {
     runApplication<FiretalkApplication>(*args)
 }
