@@ -1,5 +1,6 @@
 package pl.simplecoding.firetalk
 
+import org.springframework.data.repository.CrudRepository
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -17,3 +18,5 @@ data class Authority(
         @Column var name: String = "Name",
         @Column var authority: String = "Authority"
 )
+
+interface AuthorityRepository: CrudRepository<Authority, Long>

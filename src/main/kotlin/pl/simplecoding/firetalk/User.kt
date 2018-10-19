@@ -1,6 +1,7 @@
 package pl.simplecoding.firetalk
 
 import com.fasterxml.jackson.annotation.JsonIgnore
+import org.springframework.data.repository.CrudRepository
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -19,3 +20,10 @@ data class User(
         @Column var toGiveGreen: Int = 10,
         @Column var toGiveRed: Int = 10
 )
+
+interface UserRepository : CrudRepository<User, Long> {
+
+    override fun findAll(): List<User>
+
+    fun findOneByName(name: String): User?
+}
