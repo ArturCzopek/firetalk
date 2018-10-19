@@ -12,7 +12,7 @@ import javax.persistence.*
 @Table(name = "USERS")
 data class User(
         @Id @Column var id: Long = 0,
-        @Column var name: String = "",
+        @Column(name = "username") var name: String = "",
         @Column @JsonIgnore var password: String = "",
         @Column @JsonIgnore var enabled: Boolean = true,
         @Column @JsonIgnore var authorityId: Long = 0,
